@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'tower/style.css' %}">     
+{% endblock %}
+
+{% block nav %}
+<li><a href="{% url 'tower:place_list' %}">위치별 정렬</a></li>
+<li><a href="{% url 'tower:nuc_list' %}">nuc별 정렬</a></li> 
+<li><a href="{% url 'tower:person_list' %}">실종자별 정렬</a></li> 
+
+{% endblock %}
+
+
+{% block content %}{% endblock %}

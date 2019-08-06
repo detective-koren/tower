@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build:
+      # Either a path to a directory containing a Dockerfile, or a url to a git repository.
+      context: .
+      # Alternate Dockerfile.
+      dockerfile: Dockerfile
+    # Compose names the built image with the django and optional tag specified in image
+    image: django_d:0.2
+    command: python3 manage.py makemigrations && migrate
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/src
+    ports:
+      - 8000:8000

@@ -1,0 +1,40 @@
+{% extends 'base_top.html' %}
+{% load static %}
+
+
+
+{% block body %}
+
+<!-- html content -->
+<h1>미완 정렬</h1>
+    
+{% for nuc in object_list %}
+<div class="nuc_container">
+    <h3>{{ nuc.name }}이 추적 중인 실종자</h3>
+    {% for person in nuc.registered_people.all %}
+    <div class="person_container">
+        <div class="detecing_info">
+            <img src="{{ person.image.url }}" class="big_image" alt="{{ person.name }}사진" />
+            <p>{{ person.name }}({{ person.age }})</p>            
+            <p>실종 지역: {{ person.missing_place }}</p>
+            <p>실종 일시: {{ person.missing_date }}</p>
+
+        </div>
+        <div class="detected_info">
+            {% for detected_info in person.detectedinformation_set.all|slice:"0:3" %}
+            <img src="{{ detected_info.image.url }}" align="left" class="small_image" alt="{{ detected_info.person.name }}사진"/>
+            <p>추적 지역: {{ detected_info.detected_nuc.name }}</p>
+            <p>일치도: {{ detected_info.match_rate }}%</p>
+            {% endfor %}
+        </div>
+        
+    </div>    
+    {% endfor %}
+</div>
+{% endfor %}
+
+
+
+
+
+{% endblock %}

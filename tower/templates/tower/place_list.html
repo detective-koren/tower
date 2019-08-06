@@ -1,0 +1,28 @@
+{% extends 'base_top.html' %}    
+{% load static %}
+
+
+{% block content %}
+
+
+<!-- html content -->
+<h1>위치별 정렬</h1>
+    
+{% for nuc in object_list %}
+<div class="place_container">
+    <h3>{{ nuc.place }}에서 발견</h3>
+    {% for detected_info in nuc.detectedinformation_set.all %}
+    <div class="person_container">
+        
+        <img src="{{ detected_info.person.image.url }}" class="middle_image" alt="{{ detected_info.person.name }}사진"/>
+        <img src="{{ detected_info.image.url }}" class="middle_image" alt="{{ detected_info.person.name }}사진"/>
+        <p>{{ detected_info.person.name }}({{ detected_info.person.age }})</p>            
+        <p>실종 지역: {{ detected_info.person.missing_place }}</p>
+        <p>실종 일시: {{ detected_info.person.missing_date }}</p>
+
+    </div>    
+    {% endfor %}
+</div>
+{% endfor %}
+
+{% endblock %}

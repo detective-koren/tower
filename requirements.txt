@@ -1,0 +1,6 @@
+Django
+djangorestframework
+drf-yasg
+django-cors-headers
+Pillow
+django-nested-admin

@@ -1,0 +1,48 @@
+.nuc_container { 
+    /* background: yellow */
+    margin: 3px;
+}
+
+.place_container { 
+    /* background: yellow */
+    margin: 3px;
+}
+
+.person_container {
+    display: inline-block;
+    /* border: 1px solid red; */
+    margin: 3px;
+    
+}
+
+.detecing_info {
+    float: left;
+    /* border: 1px solid black; */
+    margin: 3px;
+    
+}
+
+.detected_info {
+    float: left;
+    /* border: 1px solid blue; */
+    width: 220px;
+    margin: 3px;
+}
+
+.big_image {
+    width: 300px;
+    height: 300px;
+    margin: 3px;
+}
+
+.middle_image {
+    width: 200px;
+    height: 200px;
+    margin: 3px;
+}
+
+.small_image {
+    width: 100px;
+    height: 100px;
+    margin: 3px;
+}
