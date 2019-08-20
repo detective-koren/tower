@@ -46,3 +46,28 @@
     height: 80px;
     margin: 3px;
 }
+
+/* 실종자별 정렬 */
+
+.big_container {
+    margin: 3px;
+    height: 500px;
+}
+
+.person_image_container {
+    margin: 10px;
+}
+
+.person_information_container {
+    display: inline-block;
+    margin: 10px;
+    line-height: 0.75em;
+}
+
+.person_detect_image_container {
+    display: inline-block;
+}
+
+.image_container {
+    display: inline-block;
+}
